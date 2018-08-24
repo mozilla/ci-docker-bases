@@ -1,7 +1,7 @@
 version: 2
 
 jobs:
-  build:
+  build-docker:
     docker:
       - image: ubuntu:18.04
 
@@ -28,4 +28,26 @@ jobs:
 
       - run:
           name: Build
-          command: docker build docker/
+          command: docker build -t mozilla/ci-base-docker docker/
+
+  deploy-docker:
+    docker:
+      - image: ubuntu:18.04
+
+    steps:
+      - run:
+          name: Dummy Deploy
+          command: echo TODO implement deployment
+
+workflows:
+  version: 2
+
+  build_deploy:
+    jobs:
+      - build-docker
+      - deploy-docker:
+          requires:
+            - build-docker
+          filters:
+            branches:
+              only: master
