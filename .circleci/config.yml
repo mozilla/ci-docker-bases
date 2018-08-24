@@ -43,18 +43,21 @@ workflows:
   version: 2
 
   pull_request:
-    filter:
-      branches:
-        exclude: master
     jobs:
-      - builder-docker
+      - builder-docker:
+          filter:
+            branches:
+              exclude: master
 
-  master:
-    filter:
-      branches:
-        only: master
+  build_deploy:
     jobs:
-      - build-docker
+      - build-docker:
+          filter:
+            branches:
+              only: master
       - deploy-docker:
           requires:
             - build-docker
+          filter:
+            branches:
+              only: master
