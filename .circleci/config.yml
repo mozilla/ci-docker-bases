@@ -10,7 +10,7 @@ jobs:
           name: Install essential packages
           command: |
             apt-get update
-            apt-get install -y ca-certificates curl git openssh-client gnupg
+            apt-get install -y ca-certificates curl git openssh-client gnupg software-properties-common
 
       - checkout
 
