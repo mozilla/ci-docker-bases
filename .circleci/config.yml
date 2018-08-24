@@ -45,19 +45,19 @@ workflows:
   pull_request:
     jobs:
       - builder-docker:
-          filter:
+          filters:
             branches:
               exclude: master
 
   build_deploy:
     jobs:
       - build-docker:
-          filter:
+          filters:
             branches:
               only: master
       - deploy-docker:
           requires:
             - build-docker
-          filter:
+          filters:
             branches:
               only: master
