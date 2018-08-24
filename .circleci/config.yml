@@ -43,14 +43,14 @@ workflows:
   version: 2
 
   pull_request:
-    filters:
+    filter:
       branches:
         exclude: master
     jobs:
       - builder-docker
 
   master:
-    filters:
+    filter:
       branches:
         only: master
     jobs:
