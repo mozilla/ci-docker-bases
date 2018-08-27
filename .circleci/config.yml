@@ -1,7 +1,12 @@
 version: 2
 
 jobs:
-  build-docker:
+  build-image:
+    parameters:
+      image-name:
+        description: The name of the base image being built. Should be a directory at the root of the repository.
+        type: string
+
     docker:
       - image: ubuntu:18.04
 
@@ -28,24 +33,32 @@ jobs:
 
       - run:
           name: Build
-          command: docker build -t mozilla/ci-base-docker docker/
+          command: docker build -t mozilla/ci-base-<< image-name >> << image-name >>/
 
-  deploy-docker:
+  deploy-image:
+    parameters:
+      image-name:
+        description: The name of the base image being built. Should be a directory at the root of the repository.
+        type: string
+
     docker:
       - image: ubuntu:18.04
 
     steps:
       - run:
           name: Dummy Deploy
-          command: echo TODO implement deployment
+          command: echo TODO implement deployment of << image-name >>
 
 workflows:
   version: 2
 
   build_deploy:
     jobs:
-      - build-docker
-      - deploy-docker:
+      - build-image:
+        name: build-docker
+        image-name: docker
+
+      - deploy-image:
           requires:
             - build-docker
           filters:
