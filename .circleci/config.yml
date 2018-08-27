@@ -38,10 +38,10 @@ jobs:
           command: docker build -t mozilla/ci-base-<< parameters.imageName >> << parameters.imageName >>/
 
       - run:
-          name: Dummy Deploy
+          name: Deploy
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              echo TODO implement deployment of << parameters.imageName >>
+              ./bin/push-image.sh mozilla/ci-base-<< parameters.imageName >>
             fi
 
 workflows:
