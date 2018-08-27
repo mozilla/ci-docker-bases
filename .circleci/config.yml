@@ -2,9 +2,11 @@ version: 2.1
 
 jobs:
   build-image:
+    description: Build and tag one of the base images in this repository.
+
     parameters:
       imageName:
-        description: The name of the base image being built. Should be a directory at the root of the repository.
+        description: The name of the base image being built.
         type: string
 
     docker:
@@ -55,10 +57,11 @@ workflows:
   build_deploy:
     jobs:
       - build-image:
-        name: build-docker
-        imageName: docker
+          name: build-docker
+          imageName: docker
 
       - deploy-image:
+          imageName: docker
           requires:
             - build-docker
           filters:
