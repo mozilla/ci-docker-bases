@@ -67,3 +67,15 @@ workflows:
           filters:
             branches:
               only: master
+
+      - build-image:
+          name: build-firefox
+          imageName: firefox
+
+      - deploy-image:
+          imageName: firefox
+          requires:
+            - build-firefox
+          filters:
+            branches:
+              only: master
