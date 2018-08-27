@@ -50,7 +50,9 @@ workflows:
   build_deploy:
     jobs:
       - build-and-deploy-image:
+          name: docker-build-and-deploy
           imageName: docker
 
       - build-and-deploy-image:
+          name: firefox-build-and-deploy
           imageName: firefox
