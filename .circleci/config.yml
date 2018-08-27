@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build-image:
     parameters:
-      image-name:
+      imageName:
         description: The name of the base image being built. Should be a directory at the root of the repository.
         type: string
 
@@ -33,11 +33,11 @@ jobs:
 
       - run:
           name: Build
-          command: docker build -t mozilla/ci-base-<< image-name >> << image-name >>/
+          command: docker build -t mozilla/ci-base-<< imageName >> << imageName >>/
 
   deploy-image:
     parameters:
-      image-name:
+      imageName:
         description: The name of the base image being built. Should be a directory at the root of the repository.
         type: string
 
@@ -47,7 +47,7 @@ jobs:
     steps:
       - run:
           name: Dummy Deploy
-          command: echo TODO implement deployment of << image-name >>
+          command: echo TODO implement deployment of << imageName >>
 
 workflows:
   version: 2
@@ -56,7 +56,7 @@ workflows:
     jobs:
       - build-image:
         name: build-docker
-        image-name: docker
+        imageName: docker
 
       - deploy-image:
           requires:
