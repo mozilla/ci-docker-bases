@@ -20,7 +20,7 @@ function retry() {
     return 0
 }
 
-echo "$DOCKER_PASSWORD" | docker login --username="$DOCKER_USERNAME" --password-stdin
+echo "$DOCKER_PASS" | docker login --username="$DOCKER_USER" --password-stdin
 
 versioned="${image}:latest"
 docker tag "${image}" "${versioned}" || (echo "Couldn't re-tag ${image} as ${versioned}" && false)
