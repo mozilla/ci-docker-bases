@@ -35,7 +35,7 @@ jobs:
 
       - run:
           name: Build
-          command: docker build -t mozilla/ci-base-<< imageName >> << imageName >>/
+          command: docker build -t mozilla/ci-base-<< parameters.imageName >> << parameters.imageName >>/
 
   deploy-image:
     parameters:
@@ -49,7 +49,7 @@ jobs:
     steps:
       - run:
           name: Dummy Deploy
-          command: echo TODO implement deployment of << imageName >>
+          command: echo TODO implement deployment of << parameters.imageName >>
 
 workflows:
   version: 2
