@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  build-image:
+  build-and-deploy-image:
     description: Build and tag one of the base images in this repository.
 
     parameters:
@@ -37,45 +37,20 @@ jobs:
           name: Build
           command: docker build -t mozilla/ci-base-<< parameters.imageName >> << parameters.imageName >>/
 
-  deploy-image:
-    parameters:
-      imageName:
-        description: The name of the base image being built. Should be a directory at the root of the repository.
-        type: string
-
-    docker:
-      - image: ubuntu:18.04
-
-    steps:
       - run:
           name: Dummy Deploy
-          command: echo TODO implement deployment of << parameters.imageName >>
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              echo TODO implement deployment of << parameters.imageName >>
+            fi
 
 workflows:
   version: 2
 
   build_deploy:
     jobs:
-      - build-image:
-          name: build-docker
+      - build-and-deploy-image:
           imageName: docker
 
-      - deploy-image:
-          imageName: docker
-          requires:
-            - build-docker
-          filters:
-            branches:
-              only: master
-
-      - build-image:
-          name: build-firefox
+      - build-and-deploy-image:
           imageName: firefox
-
-      - deploy-image:
-          imageName: firefox
-          requires:
-            - build-firefox
-          filters:
-            branches:
-              only: master
