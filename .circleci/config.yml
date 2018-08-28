@@ -10,29 +10,10 @@ jobs:
         type: string
 
     docker:
-      - image: ubuntu:18.04
+      - image: mozilla/cidockerbases:docker-2018-08-28
 
     steps:
-      - run:
-          name: Install essential packages
-          command: |
-            apt-get update
-            apt-get install -y ca-certificates curl git openssh-client gnupg software-properties-common
-
       - checkout
-
-      - run:
-          name: Install Docker client
-          command: |
-            curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-            apt-key fingerprint 0EBFCD88
-            add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-            apt-get update
-            apt-get install -y docker-ce=18.03.1~ce~3-0~ubuntu
-
-      - setup_remote_docker:
-          version: 18.03.1-ce
-
       - run:
           name: Build
           command: docker build -t << parameters.imageName >> << parameters.imageName >>/
