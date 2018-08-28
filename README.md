@@ -13,7 +13,7 @@ Different images are available as tags within that repository. Images are
 versioned by date, for example: `image-2018-08-27`. Additionally, for each
 image type there is a `image-latest` tag.
 
-There is no bare `latest` tag, soreferring to `mozilla/cidockerbases` without
+There is no bare `latest` tag, so referring to `mozilla/cidockerbases` without
 a version tag won't work. An explicit tag must be specified, like
 `docker-latest`.
 
