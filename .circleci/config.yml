@@ -14,6 +14,10 @@ jobs:
 
     steps:
       - checkout
+
+      - setup_remote_docker:
+          version: 18.03.1-ce
+
       - run:
           name: Build
           command: docker build -t << parameters.imageName >> << parameters.imageName >>/
