@@ -10,7 +10,7 @@ jobs:
         type: string
 
     docker:
-      - image: mozilla/cidockerbases:docker-2018-08-28
+      - image: docker:18.03.1-ce
 
     steps:
       - checkout
