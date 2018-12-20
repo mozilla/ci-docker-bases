@@ -7,7 +7,5 @@
   },
   "dockerfile": {
     "pinDigests": true
-  },
-  "timezone": "America/Los Angeles",
-  "schedule": ["before 8:00 on mondays"]  
+  }
 }
