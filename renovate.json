@@ -8,6 +8,6 @@
   "dockerfile": {
     "pinDigests": true
   },
-  "timezone": "PST",
+  "timezone": "America/Los Angeles",
   "schedule": ["before 8:00 on mondays"]  
 }
