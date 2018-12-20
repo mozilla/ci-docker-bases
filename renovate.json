@@ -1,5 +1,13 @@
 {
-  "extends": [
-    "config:base"
-  ]
+  "extends": ["config:base"],
+  "docker-compose": {
+    "digest": {
+      "enabled": false
+    }
+  },
+  "dockerfile": {
+    "pinDigests": true
+  },
+  "timezone": "PST",
+  "schedule": ["before 8:00 on mondays"]  
 }
