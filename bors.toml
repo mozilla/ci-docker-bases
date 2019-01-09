@@ -1,4 +1,8 @@
-status = ["ci/circleci: firefox-build-and-deploy", "ci/circleci: docker-build-and-deploy"]
+status = [
+  "ci/circleci: firefox-build-and-deploy",
+  "ci/circleci: docker-build-and-deploy",
+  "ci/circleci: rust-build-and-deploy",
+]
 cut_body_after = "\n\n---\n\n" # Avoid including verbose details from Renovate in commit messages
 block_labels = ["bors-dont-merge"]
 # At the moment, this project is a single-developer project.
