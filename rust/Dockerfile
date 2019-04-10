@@ -14,7 +14,8 @@ RUN mkdir -p /tmp/kcov && \
     cargo kcov --print-install-kcov-sh | sh
 
 RUN rustup component add rustfmt && \
-    rustup component add clippy
+    rustup component add clippy && \
+    cargo install cargo-audit
 
 # Cleanup
 RUN apt-get clean && \
