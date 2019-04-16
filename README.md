@@ -33,3 +33,11 @@ repository, including itself.
 
 The latest stable version of Firefox and Node.js. A great base for running JS
 integration tests in a browser.
+
+### Therapist
+
+`mozilla/cidockerbases:therapist-latest`
+
+The latest Python 3 and Node.js 10 with 
+[Therapist](https://github.com/rehandalal/therapist) pre-installed.
+A great base for linting jobs.
