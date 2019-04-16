@@ -45,3 +45,7 @@ workflows:
       - build-and-deploy-image:
           name: rust-build-and-deploy
           imageName: rust
+
+      - build-and-deploy-image:
+          name: therapist-build-and-deploy
+          imageName: therapist
