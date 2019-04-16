@@ -1,5 +1,5 @@
 # Latest stable Python 3
-FROM python:3-stretch
+FROM python:3-stretch@sha256:fa60a2d97d70f92713e7b8af684756516d6b3e37bf12be49641865ba817305fc
 
 LABEL maintainer="Rehan Dalal <rdalal@mozilla.com>"
 
