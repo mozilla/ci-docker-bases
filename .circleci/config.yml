@@ -47,5 +47,5 @@ workflows:
           imageName: rust
 
       - build-and-deploy-image:
-          name: therapist-build-and-deploy
-          imageName: therapist
+          name: python-node-build-and-deploy
+          imageName: python-node

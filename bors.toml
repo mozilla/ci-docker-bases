@@ -2,7 +2,7 @@ status = [
   "ci/circleci: firefox-build-and-deploy",
   "ci/circleci: docker-build-and-deploy",
   "ci/circleci: rust-build-and-deploy",
-  "ci/circleci: therapist-build-and-deploy",
+  "ci/circleci: python-node-build-and-deploy",
 ]
 cut_body_after = "\n\n---\n\n" # Avoid including verbose details from Renovate in commit messages
 block_labels = ["bors-dont-merge"]
