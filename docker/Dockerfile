@@ -1,4 +1,4 @@
-FROM ubuntu:18.04@sha256:017eef0b616011647b269b5c65826e2e2ebddbe5d1f8c1e56b3599fb14fabec8
+FROM ubuntu:18.04@sha256:d26d529daa4d8567167181d9d569f2a85da3c5ecaf539cace2c6223355d69981
 
 LABEL maintainer="Michael Cooper <mcooper@mozilla.com>"
 
