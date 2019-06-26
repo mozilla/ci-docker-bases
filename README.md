@@ -41,3 +41,8 @@ integration tests in a browser.
 The latest Python 3 and Node.js 10 with 
 [Therapist](https://github.com/rehandalal/therapist) pre-installed.
 A great base for linting jobs.
+
+### Rust
+
+`mozilla/cidockerbases:rust-latest`
+The latest stable version of Rust with code coverage and rust formatter installed.
