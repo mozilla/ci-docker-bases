@@ -45,4 +45,5 @@ A great base for linting jobs.
 ### Rust
 
 `mozilla/cidockerbases:rust-latest`
+
 The latest stable version of Rust with code coverage and rust formatter installed.
