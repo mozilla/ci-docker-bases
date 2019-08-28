@@ -12,5 +12,9 @@
   },
   "dockerfile": {
     "pinDigests": true
-  }
+  },
+  "automerge": true,
+  "automergeType": "pr-comment",
+  "automergeComment": "bors r+",
+  "requiredStatusChecks": null
 }
