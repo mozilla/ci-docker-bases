@@ -7,7 +7,7 @@ LABEL maintainer="Michael Cooper <mcooper@mozilla.com>"
 # kcov directly.
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y cmake g++ pkg-config jq libcurl4-openssl-dev libelf-dev libdw-dev binutils-dev libiberty-dev
+    apt-get --no-install-recommends install -y apt-utils ca-certificates cmake g++ pkg-config jq libcurl4-openssl-dev libelf-dev libdw-dev binutils-dev libiberty-dev
 RUN cargo install cargo-kcov
 RUN mkdir -p /tmp/kcov && \
     cd /tmp/kcov && \
