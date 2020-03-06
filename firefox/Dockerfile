@@ -3,8 +3,9 @@ FROM ubuntu:18.04@sha256:0925d086715714114c1988f7c947db94064fd385e171a63c07730f1
 LABEL maintainer="Michael Cooper <mcooper@mozilla.com>"
 
 RUN apt-get update
-RUN apt-get install -y \
+RUN apt-get --no-install-recommends install -y \
         apt-transport-https \
+        apt-utils \
         ca-certificates \
         curl \
         git \
@@ -14,17 +15,17 @@ RUN apt-get install -y \
         software-properties-common
 
 # Install Firefox dependencies (but not Firefox)
-RUN apt-get install -y $(apt-cache depends firefox | awk '/Depends/ {print $2}')
+RUN apt-get --no-install-recommends install -y $(apt-cache depends firefox | awk '/Depends/ {print $2}')
 
 # Install node
-RUN apt-get install -y nodejs npm
-RUN apt-get install apt-transport-https
+RUN apt-get --no-install-recommends install -y nodejs npm
+RUN apt-get --no-install-recommends install apt-transport-https
 
 # Install Yarn
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
     && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
     && apt-get update \
-    && apt-get install yarn
+    && apt-get --no-install-recommends install yarn
 ENV PATH="$PATH:$HOME/.yarn/bin"
 
 # Install Firefox

@@ -4,7 +4,7 @@ FROM python:3-stretch@sha256:2f1eb47fe9222f760ae00b890b6033e5eff899789471337727f
 LABEL maintainer="Rehan Dalal <rdalal@mozilla.com>"
 
 RUN apt-get update
-RUN apt-get install -y apt-transport-https git
+RUN apt-get --no-install-recommends install -y apt-transport-https git apt-utils ca-certificates
 
 # Install node prereqs, nodejs and yarn
 # Ref: https://deb.nodesource.com/setup_10.x
@@ -14,7 +14,7 @@ RUN echo "deb https://deb.nodesource.com/node_10.x stretch main" > /etc/apt/sour
     echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list && \
     wget -qO- https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     apt-get update && \
-    apt-get install -yqq nodejs yarn && \
+    apt-get --no-install-recommends install -yqq nodejs yarn && \
     npm i -g npm@>=6 && \
     rm -rf /var/lib/apt/lists/*
 
