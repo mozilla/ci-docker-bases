@@ -1,5 +1,5 @@
 # latest stable Rust 1.x
-FROM rust:1-stretch@sha256:2ecd4a03e9cb36f54f886ec5b4625cc44a77fe6a2340898f9b8a0e57a61d8583
+FROM rust:1-stretch@sha256:b3a396a030942e5aa8718a1082ff0566860b5f9c8dc2265ce827fff2d4df8372
 
 LABEL maintainer="Michael Cooper <mcooper@mozilla.com>"
 
