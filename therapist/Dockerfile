@@ -18,5 +18,5 @@ RUN echo "deb https://deb.nodesource.com/node_10.x stretch main" > /etc/apt/sour
     npm i -g npm@>=6 && \
     rm -rf /var/lib/apt/lists/*
 
-# Upgrade pip and install therapist
-RUN pip install -U pip therapist
+# Upgrade pip and install needed tools
+RUN pip install -U pip therapist poetry
