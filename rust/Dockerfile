@@ -16,6 +16,7 @@ RUN mkdir -p /tmp/kcov && \
 RUN rustup component add rustfmt
 RUN rustup component add clippy
 RUN cargo install cargo-audit
+RUN cargo install sccache
 
 # Cleanup
 RUN apt-get clean && \
