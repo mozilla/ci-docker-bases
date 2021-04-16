@@ -46,4 +46,9 @@ A great base for linting jobs.
 
 `mozilla/cidockerbases:rust-latest`
 
-The latest stable version of Rust with code coverage and rust formatter installed.
+The latest stable version of Rust. Includes:
+
+- rustfmt
+- cargo-audit
+- cargo-kcov for code coverage
+- sccache for faster builds (requires set up)
