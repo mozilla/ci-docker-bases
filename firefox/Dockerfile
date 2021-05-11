@@ -2,6 +2,8 @@ FROM ubuntu:20.04@sha256:cf31af331f38d1d7158470e095b132acd126a7180a54f263d386da8
 
 LABEL maintainer="Michael Cooper <mcooper@mozilla.com>"
 
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=UTC
 ENV PATH="$PATH:$HOME/.yarn/bin"
 
 RUN apt-get update && \
