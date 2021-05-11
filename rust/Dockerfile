@@ -3,6 +3,9 @@ FROM rust:buster@sha256:ed56f1e45d977fb958fb1d4fc9a735c6aa64b0d7019d2a974d37ee4f
 
 LABEL maintainer="Michael Cooper <mcooper@mozilla.com>"
 
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=UTC
+
 # cargo-kcov needs kcov >= 30, which is not in the Debian Buster repositories,
 # so build it directly using a script provided by cargo-kcov.
 RUN apt-get update && \

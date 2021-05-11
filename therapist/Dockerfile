@@ -2,6 +2,9 @@ FROM python:3.9@sha256:0813df59b3d73a13fc581fd416d7733a2de6540d7e3f7633a1a9aabf9
 
 LABEL maintainer="Rehan Dalal <rdalal@mozilla.com>"
 
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=UTC
+
 RUN apt-get update
 RUN apt-get --no-install-recommends install -y apt-transport-https git apt-utils ca-certificates
 

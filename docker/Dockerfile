@@ -1,6 +1,9 @@
-FROM ubuntu:18.04@sha256:538529c9d229fb55f50e6746b119e899775205d62c0fc1b7e679b30d02ecb6e8
+FROM ubuntu:20.04@sha256:cf31af331f38d1d7158470e095b132acd126a7180a54f263d386da88eb681d93
 
 LABEL maintainer="Michael Cooper <mcooper@mozilla.com>"
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=UTC
 
 RUN apt-get update \
     && apt-get --no-install-recommends install -y \
@@ -18,7 +21,7 @@ RUN apt-get update \
     && apt-key fingerprint 0EBFCD88 \
     && add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \
     && apt-get update \
-    && apt-get --no-install-recommends install -y docker-ce=18.03.1~ce~3-0~ubuntu \
+    && apt-get --no-install-recommends install -y docker-ce=5:20.10.6~3-0~ubuntu-focal \
     && curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose \
     && chmod +x /usr/local/bin/docker-compose \
     && apt-get clean

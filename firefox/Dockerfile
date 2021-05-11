@@ -1,7 +1,9 @@
-FROM ubuntu:18.04@sha256:538529c9d229fb55f50e6746b119e899775205d62c0fc1b7e679b30d02ecb6e8
+FROM ubuntu:20.04@sha256:cf31af331f38d1d7158470e095b132acd126a7180a54f263d386da88eb681d93
 
 LABEL maintainer="Michael Cooper <mcooper@mozilla.com>"
 
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=UTC
 ENV PATH="$PATH:$HOME/.yarn/bin"
 
 RUN apt-get update && \
@@ -19,7 +21,7 @@ RUN apt-get update && \
     && \
     apt-get --no-install-recommends install -y $(apt-cache depends firefox | awk '/Depends/ {print $2}') && \
     curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - && \
-    echo 'deb https://deb.nodesource.com/node_12.x bionic main' > /etc/apt/sources.list.d/nodesource.list && \
+    echo 'deb https://deb.nodesource.com/node_12.x focal main' > /etc/apt/sources.list.d/nodesource.list && \
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     echo 'deb https://dl.yarnpkg.com/debian/ stable main' > /etc/apt/sources.list.d/yarn.list && \
     apt-get update && \
