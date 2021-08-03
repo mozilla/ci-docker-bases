@@ -52,3 +52,4 @@ The latest stable version of Rust. Includes:
 - cargo-audit
 - cargo-kcov for code coverage
 - sccache for faster builds (requires set up)
+- cargo-hack
