@@ -20,6 +20,7 @@ RUN rustup component add rustfmt
 RUN rustup component add clippy
 RUN cargo install cargo-audit
 RUN cargo install sccache
+RUN cargo install cargo-hack
 
 # Cleanup
 RUN apt-get clean && \
