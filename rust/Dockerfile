@@ -21,6 +21,7 @@ RUN rustup component add clippy
 RUN cargo install cargo-audit
 RUN cargo install sccache
 RUN cargo install cargo-hack
+RUN cargo install mdbook
 
 # Cleanup
 RUN apt-get clean && \
