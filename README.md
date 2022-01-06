@@ -4,7 +4,7 @@ This is a collection of Docker images designed to be useful as base images in
 Circle CI tests for Mozilla projects. They are automatically kept up to date,
 and endeavor to provide a useful set of tools to run tests on.
 
-Unless otherwise noted, all images are based on Ubuntu 18.04.
+Unless otherwise noted, all images are based on Ubuntu 20.04.
 
 ## Available images
 
@@ -42,6 +42,8 @@ The latest Python 3 and Node.js 10 with
 [Therapist](https://github.com/rehandalal/therapist) pre-installed.
 A great base for linting jobs.
 
+This is based on the ``python:3.9`` image, which is built on Debian 11 (bullseye).
+
 ### Rust
 
 `mozilla/cidockerbases:rust-latest`
@@ -53,3 +55,5 @@ The latest stable version of Rust. Includes:
 - cargo-kcov for code coverage
 - sccache for faster builds (requires set up)
 - cargo-hack
+
+This is based on the ``rust:buster`` image, which is built on Debian 10 (buster).
