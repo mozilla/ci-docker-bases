@@ -1,5 +1,5 @@
 # latest stable Rust 1.x
-FROM rust:buster@sha256:e6bb347e01ca274c3d4511b765f7cb9ce495d8bad3a3a99b46ae1337f7af52f6
+FROM rust:buster@sha256:7dddaecfd18a6fb03df48c8aff7e4fd1d05a7e6f61d5e5cf36294bbabad60201
 
 LABEL maintainer="Michael Cooper <mcooper@mozilla.com>"
 
