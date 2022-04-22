@@ -6,6 +6,15 @@ and endeavor to provide a useful set of tools to run tests on.
 
 Unless otherwise noted, all images are based on Ubuntu 20.04.
 
+## Status: Deprecated
+We plan to stop updating these images on October 1, 2022, and archive this repository.
+We recommend using one of the
+[Pre-Built CircleCI Docker Images](https://circleci.com/docs/2.0/circleci-images/)
+instead. See https://github.com/mozilla/ci-docker-bases/issues/322 for more information.
+
+We intend to keep the automated updates running until October 1, 2022, but do not plan
+to add new images or features, or update to later OS versions.
+
 ## Available images
 
 All images are in the [mozilla/cidockerbases repository][dockerhub].
