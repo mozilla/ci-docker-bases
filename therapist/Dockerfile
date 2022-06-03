@@ -1,4 +1,4 @@
-FROM python:3.9@sha256:84a90f649a0d298b43fb6e6c9b5e8eedff9c91939468bc27366e0446106e5284
+FROM python:3.9@sha256:d88a0a58aeaa7e72b518fedb2b41c247587afd9f00105143c103cf37d7c29ef4
 
 LABEL maintainer="Rehan Dalal <rdalal@mozilla.com>"
 
