@@ -10,13 +10,17 @@ jobs:
         type: string
 
     docker:
-      - image: mozilla/cidockerbases:docker-2018-08-28
+      - image: cimg/base:current-22.04
+        auth:
+          username: $DOCKER_USER
+          password: $DOCKER_PASS
 
     steps:
       - checkout
 
       - setup_remote_docker:
-          version: 18.03.1-ce
+          version: 20.10.14
+          docker_layer_caching: true
 
       - run:
           name: Build
@@ -25,7 +29,7 @@ jobs:
       - run:
           name: Deploy
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+            if [ "${CIRCLE_BRANCH}" == "main" ]; then
               ./bin/push-image.sh << parameters.imageName >>
             fi
 
