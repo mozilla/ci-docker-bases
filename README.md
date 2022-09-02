@@ -36,12 +36,6 @@ A modern version of Docker, Docker Compose, and other tools to make running
 CI easier. A version of this image is used to build all the images in this
 repository, including itself.
 
-### Firefox
-
-`mozilla/cidockerbases:firefox-latest`
-
-The latest stable version of Firefox and Node.js. A great base for running JS
-integration tests in a browser.
 
 ### Therapist
 
@@ -66,3 +60,15 @@ The latest stable version of Rust. Includes:
 - cargo-hack
 
 This is based on the ``rust:buster`` image, which is built on Debian 10 (buster).
+
+## Deprecated Images
+
+These images are no longer built or published to Dockerhub
+
+### Firefox
+
+* `mozilla/cidockerbases:firefox-latest`
+* `mozilla/cidockerbases:firefox-2022-09-02` (*final image*)
+
+The latest stable version of Firefox and Node.js. A great base for running JS
+integration tests in a browser.
