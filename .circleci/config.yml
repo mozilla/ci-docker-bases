@@ -43,10 +43,6 @@ workflows:
           imageName: docker
 
       - build-and-deploy-image:
-          name: firefox-build-and-deploy
-          imageName: firefox
-
-      - build-and-deploy-image:
           name: rust-build-and-deploy
           imageName: rust
 
