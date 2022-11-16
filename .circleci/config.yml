@@ -1,51 +1,15 @@
 version: 2.1
-
 jobs:
-  build-and-deploy-image:
-    description: Build and tag one of the base images in this repository.
-
-    parameters:
-      imageName:
-        description: The name of the base image being built.
-        type: string
-
+  Deprecated:
     docker:
-      - image: cimg/base:current-22.04
-        auth:
-          username: $DOCKER_USER
-          password: $DOCKER_PASS
-
+      - image: cimg/base:current
     steps:
-      - checkout
-
-      - setup_remote_docker:
-          version: 20.10.14
-          docker_layer_caching: true
-
       - run:
-          name: Build
-          command: docker build -t << parameters.imageName >> << parameters.imageName >>/
-
-      - run:
-          name: Deploy
+          name: Deprecation announcement
           command: |
-            if [ "${CIRCLE_BRANCH}" == "main" ]; then
-              ./bin/push-image.sh << parameters.imageName >>
-            fi
+            echo "This project is deprecated. See https://github.com/mozilla/ci-docker-bases/issues/322."
 
 workflows:
-  version: 2
-
-  build_deploy:
+  Deprecated-Workflow:
     jobs:
-      - build-and-deploy-image:
-          name: docker-build-and-deploy
-          imageName: docker
-
-      - build-and-deploy-image:
-          name: rust-build-and-deploy
-          imageName: rust
-
-      - build-and-deploy-image:
-          name: therapist-build-and-deploy
-          imageName: therapist
+      - Deprecated
