@@ -1,20 +1,4 @@
 {
-  "extends": ["config:base"],
-  "docker": {
-    "minor": {
-      "enabled": false
-    }
-  },
-  "docker-compose": {
-    "digest": {
-      "enabled": false
-    }
-  },
-  "dockerfile": {
-    "pinDigests": true
-  },
-  "automerge": true,
-  "automergeType": "pr-comment",
-  "automergeComment": "bors r+",
-  "requiredStatusChecks": null
+  "extends": ["config:base", ":disableDependencyDashboard"],
+  "enabled": false
 }
