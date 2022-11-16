@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   Deprecated:
     docker:
-      - image: cimg/base
+      - image: cimg/base:current
     steps:
       - run:
           name: Deprecation announcement
